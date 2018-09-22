@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 
+class Link {
+  label: string;
+  href: string;
+  icon: string;
+  menu?: Link[];
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,56 +14,96 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Diggly';
-  links = [{
-    name: 'Home',
-    href: '/'
+  links: Link[] = [{
+    label: 'Home',
+    href: '/',
+    icon: 'home',
+    menu: []
   }, {
-    name: 'Login',
-    href: '/login'
+    label: 'Login',
+    href: '/login',
+    icon: 'lock',
+    menu: []
   }, {
-    name: 'Setup',
-    href: '/setup'
+    label: 'Projects',
+    href: '/projects',
+    icon: 'folder_open',
+    menu: [{
+      label: 'Project 1',
+      href: '/projects/1',
+      icon: ''
+    }]
   }, {
-    name: 'Schemas',
-    href: '/schemas'
+    label: 'Schemas',
+    href: '/schemas',
+    icon: 'device_hub',
+    menu: [{
+      label: 'Schema 1',
+      href: '/schemas/1',
+      icon: ''
+    }, {
+      label: 'Schema 2',
+      href: '/schemas/2',
+      icon: ''
+    }]
   }, {
-    name: 'Schema Detail',
-    href: '/schemas/1'
+    label: 'Datasets',
+    href: '/datasets',
+    icon: 'view_list',
+    menu: [{
+      label: 'Dataset 1',
+      href: '/datasets/1',
+      icon: ''
+    }, {
+      label: 'Dataset 2',
+      href: '/datasets/2',
+      icon: ''
+    }]
   }, {
-    name: 'Scenarios',
-    href: '/scenarios'
+    label: 'Databases',
+    href: '/databases',
+    icon: 'view_agenda',
+    menu: [{
+      label: 'Database 1',
+      href: '/databases/1',
+      icon: ''
+    }]
   }, {
-    name: 'Scenario Detail',
-    href: '/scenarios/1'
+    label: 'APIs',
+    href: '/apis',
+    icon: 'cloud',
+    menu: [{
+      label: 'API 1',
+      href: '/apis/1',
+      icon: ''
+    }]
   }, {
-    name: 'Projects',
-    href: '/projects'
+    label: 'Scenarios',
+    href: '/scenarios',
+    icon: 'movie',
+    menu: [{
+      label: 'Scenario 1',
+      href: '/scenarios/1',
+      icon: ''
+    }]
   }, {
-    name: 'Project Detail',
-    href: '/projects/1'
+    label: 'Generators',
+    href: '/generators',
+    icon: 'autorenew',
+    menu: [{
+      label: 'Generator 1',
+      href: '/generators/1',
+      icon: ''
+    }]
   }, {
-    name: 'Preferences',
-    href: '/preferences'
+    label: 'Setup',
+    href: '/setup',
+    icon: 'settings_input_component',
+    menu: []
   }, {
-    name: 'Datasets',
-    href: '/datasets'
-  }, {
-    name: 'Dataset Detail',
-    href: '/datasets/1'
-  }, {
-    name: 'Databases',
-    href: '/databases'
-  }, {
-    name: 'Database Detail',
-    href: '/databases/1'
-  }, {
-    name: 'APIs',
-    href: '/apis'
-  }, {
-    name: 'API Detail',
-    href: '/apis/1'
-  }, {
-    name: 'Generators',
-    href: '/generators'
+    label: 'Preferences',
+    href: '/preferences',
+    icon: 'settings',
+    menu: []
   }]
 }

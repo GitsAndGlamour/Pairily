@@ -1,0 +1,10 @@
+main {
+  display: flex;
+  flex-direction: row;
+}
+router-outlet {
+  padding-left: 2rem;
+}
+mdc-drawer {
+  height: 100vh;
+}
