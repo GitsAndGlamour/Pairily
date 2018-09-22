@@ -1,10 +1,27 @@
-main {
+.drawer-header-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
-router-outlet {
-  padding-left: 2rem;
-}
+
 mdc-drawer {
   height: 100vh;
+}
+
+.drawer-header-container a {
+  margin: auto;
+}
+
+.drawer-open {
+  width: 25%;
+}
+
+.drawer-close {
+  width: 60px;
+}
+.content-drawer-open {
+  margin-left: 265px;
+}
+.content-drawer-close {
+  margin-left: 75px;
 }

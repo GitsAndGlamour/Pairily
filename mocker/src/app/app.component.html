@@ -1,14 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <main>
-  <mdc-drawer drawer="permanent" #drawer>
-    <mdc-drawer-header title="{{title}}" subtitle="Mocking Made Simple"></mdc-drawer-header>
+  <mdc-drawer drawer="dismissible" #drawer id="drawer" [ngClass]="{'drawer-open': showDrawerLabels, 'drawer-close': !showDrawerLabels}">
+    <div class="drawer-header-container">
+      <mdc-drawer-header title="{{title}}" subtitle="Mocking Made Simple" *ngIf="showDrawerLabels"></mdc-drawer-header>
+      <a mdc-list-item>
+        <mdc-icon (click)="toggleDrawer()">{{drawerToggleIcon}}</mdc-icon>
+      </a>
+    </div>
     <mdc-drawer-content>
       <mdc-list useActivatedClass>
         <a mdc-list-item *ngFor="let item of links" routerLink="{{item.href}}">
-          <mdc-icon mdcListItemGraphic *ngIf="item.icon">{{item.icon}}</mdc-icon>{{item.label}}
+          <mdc-icon mdcListItemGraphic *ngIf="item.icon">{{item.icon}}</mdc-icon>{{showDrawerLabels ? item.label : null}}
         </a>
       </mdc-list>
     </mdc-drawer-content>
   </mdc-drawer>
-  <router-outlet></router-outlet>
+  <div mdcDrawerAppContent [ngClass]="{'content-drawer-open': showDrawerLabels, 'content-drawer-close': !showDrawerLabels}"t>
+    <router-outlet></router-outlet>
+  </div>
 </main>

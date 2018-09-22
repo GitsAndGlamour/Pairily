@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {MdcDrawer} from "@angular-mdc/web";
 
 class Link {
   label: string;
@@ -12,8 +13,11 @@ class Link {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  implements AfterViewInit {
+  @ViewChild('drawer') drawer:MdcDrawer;
   title = 'Diggly';
+  showDrawerLabels = true;
+  drawerToggleIcon: string = 'apps';
   links: Link[] = [{
     label: 'Home',
     href: '/',
@@ -105,5 +109,17 @@ export class AppComponent {
     href: '/preferences',
     icon: 'settings',
     menu: []
-  }]
+  }];
+
+  ngAfterViewInit(): void {
+    this.drawer.open();
+  }
+
+  toggleDrawer() {
+    this.showDrawerLabels = !this.showDrawerLabels;
+    this.drawerToggleIcon = this.showDrawerLabels? 'apps' : 'view_list';
+    console.log(this.drawerToggleIcon, this.showDrawerLabels);
+  }
+
+
 }
