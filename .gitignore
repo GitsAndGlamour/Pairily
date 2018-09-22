@@ -1,0 +1,4 @@
+#JetBrains Files
+.idea/
+#Dependency Files
+node_modules/

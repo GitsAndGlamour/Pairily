@@ -1,0 +1,15 @@
+{
+  "name": "diggly",
+  "version": "1.0.0",
+  "description": "A Data Mocking Tool that Harnesses Google Cloud Platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Omie Walls <omie.walls@daugherty.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^3.0.0"
+  }
+}
