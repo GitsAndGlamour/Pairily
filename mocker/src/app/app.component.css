@@ -1,7 +1,7 @@
 .drawer-header-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 mdc-drawer {
@@ -19,9 +19,23 @@ mdc-drawer {
 .drawer-close {
   width: 60px;
 }
+
 .content-drawer-open {
   margin-left: 265px;
 }
+
 .content-drawer-close {
   margin-left: 75px;
+}
+
+@media only screen and (max-width: 870px) {
+  .drawer-open {
+    width: 60px;
+  }
+  .content-drawer-open {
+    margin-left: 75px;
+  }
+  .drawer-header-container {
+    display: none;
+  }
 }
