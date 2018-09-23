@@ -160,11 +160,15 @@ export class AppComponent  implements AfterViewInit {
   }
 
   doSignup() {
-    this.authentication.signup(this.email, this.password, ()=> this.handleAuthSuccess());
+    this.authentication.signup(this.email, this.password, () => this.handleAuthSuccess());
   }
 
   doLogin() {
-    this.authentication.login(this.email, this.password, ()=> this.handleAuthSuccess());
+    this.authentication.login(this.email, this.password, () => this.handleAuthSuccess());
+  }
+
+  doGoogleLogin() {
+    this.authentication.google(() => this.handleAuthSuccess());
   }
 
   doLogout() {

@@ -1,6 +1,3 @@
-img {
-  height: 100vh;
-}
 mdc-drawer {
   height: 100vh;
   -webkit-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
@@ -23,6 +20,7 @@ mdc-text-field {
 .drawer-header-container a {
   margin: auto;
   padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 .drawer-open {
   width: 25%;
@@ -35,6 +33,9 @@ mdc-text-field {
 }
 .content-drawer-close {
   margin-left: 59px;
+}
+#wall {
+  height: 100vh;
 }
 #background {
   height: 100vh;
@@ -56,9 +57,18 @@ mdc-text-field {
   justify-content: space-around;
 }
 
+#google-button {
+  height: 51px;
+  margin: auto;
+  padding-top: 1rem;
+}
+
 @media only screen and (min-width: 871px) {
   #close {
     display: none;
+  }
+  #google-button {
+    height: 47px;
   }
 }
 

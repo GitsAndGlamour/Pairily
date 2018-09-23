@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import {Injectable, Provider} from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs';
 import * as firebase from 'firebase/app';
 
 import {MdcSnackbar} from "@angular-mdc/web";
+import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 
 @Injectable()
 export class AuthService {
@@ -21,9 +22,7 @@ export class AuthService {
         console.log('Success!', value);
         callback();
       })
-      .catch(err => {
-        this.handleError(err.message);
-      });
+      .catch(err => this.handleError(err.message))
   }
 
   login(email: string, password: string, callback: Function) {
@@ -34,9 +33,17 @@ export class AuthService {
         console.log('Nice, it worked!');
         callback();
       })
-      .catch(err => {
-        this.handleError(err.message);
-      });
+      .catch(err => this.handleError(err.message))
+  }
+
+  google(callback: Function) {
+    this.firebaseAuth
+      .auth
+      .signInWithPopup(new GoogleAuthProvider())
+      .then(value => {
+        callback();
+      })
+      .catch(err => this.handleError(err.message))
   }
 
   logout() {

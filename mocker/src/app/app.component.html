@@ -37,13 +37,14 @@
             <button mdc-button>Reset</button>
             <button [secondary]="true" mdc-button [raised]="true" (click)="submit(email.value, password.value)">{{auth.label}}</button>
           </div>
+          <img id="google-button" (click)="doGoogleLogin()" src="assets/icons/google/web/2x/btn_google_signin_light_normal_web@2x.png">
         </form>
       </mdc-list>
     </mdc-drawer-content>
   </mdc-drawer>
   <div mdcDrawerAppContent [ngClass]="{'content-drawer-open': showDrawerLabels, 'content-drawer-close': !showDrawerLabels}" id="router">
     <div id="background">
-      <img (click)="cycleHeaderImages()" src="assets/img/wall-{{imageIndex}}.jpg" />
+      <img (click)="cycleHeaderImages()" id="wall" src="assets/img/wall-{{imageIndex}}.jpg" />
       <div id="inner-router-container">
         <router-outlet></router-outlet>
       </div>
