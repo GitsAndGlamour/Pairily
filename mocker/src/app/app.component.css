@@ -6,10 +6,15 @@
 
 mdc-drawer {
   height: 100vh;
+  -webkit-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.43);
+  -moz-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.43);
+  box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.43);
+  background-color: #e5e5e5;
 }
 
 .drawer-header-container a {
   margin: auto;
+  padding-top: 1.5rem;
 }
 
 .drawer-open {
@@ -21,12 +26,23 @@ mdc-drawer {
 }
 
 .content-drawer-open {
-  margin-left: 265px;
+  margin-left: 225px;
 }
 
 .content-drawer-close {
-  margin-left: 75px;
+  margin-left: 59px;
 }
+
+#background {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+img {
+  height: inherit;
+  width: inherit;
+}
+
 
 @media only screen and (max-width: 870px) {
   .drawer-open {

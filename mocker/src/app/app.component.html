@@ -15,7 +15,10 @@
       </mdc-list>
     </mdc-drawer-content>
   </mdc-drawer>
-  <div mdcDrawerAppContent [ngClass]="{'content-drawer-open': showDrawerLabels, 'content-drawer-close': !showDrawerLabels}"t>
+  <div mdcDrawerAppContent [ngClass]="{'content-drawer-open': showDrawerLabels, 'content-drawer-close': !showDrawerLabels}" id="router">
+    <div id="background">
+      <img (click)="cycleHeaderImages()" src="assets/img/wall-{{imageIndex}}.jpg" />
+    </div>
     <router-outlet></router-outlet>
   </div>
 </main>

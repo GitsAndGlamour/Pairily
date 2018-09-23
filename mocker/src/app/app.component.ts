@@ -15,6 +15,7 @@ class Link {
 })
 export class AppComponent  implements AfterViewInit {
   @ViewChild('drawer') drawer:MdcDrawer;
+  imageIndex = 1;
   title = 'Diggly';
   showDrawerLabels = true;
   drawerToggleIcon: string = 'apps';
@@ -119,6 +120,13 @@ export class AppComponent  implements AfterViewInit {
     this.showDrawerLabels = !this.showDrawerLabels;
     this.drawerToggleIcon = this.showDrawerLabels? 'apps' : 'view_list';
     console.log(this.drawerToggleIcon, this.showDrawerLabels);
+  }
+
+  cycleHeaderImages() {
+    if (this.imageIndex == 10) {
+      this.imageIndex = 0;
+    }
+    this.imageIndex++;
   }
 
 
