@@ -18,7 +18,7 @@ mdc-text-field {
 .drawer-header-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 .drawer-header-container a {
   margin: auto;
@@ -46,8 +46,20 @@ mdc-text-field {
   position: fixed;
   padding-left: 3rem;
 }
-#login-submit {
+#close {
+  float: right;
+  margin-bottom: 10px;
+}
+#login-actions {
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media only screen and (min-width: 871px) {
+  #close {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 870px) {
@@ -55,9 +67,20 @@ mdc-text-field {
     width: 60px;
   }
   .content-drawer-open {
-    margin-left: 75px;
+    margin-left: 60px;
   }
   .drawer-header-container {
     display: none;
+  }
+  form {
+    position: fixed;
+    z-index: 2000;
+    top: 10%;
+    left: 25%;
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    -webkit-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
+    -moz-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
+    box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
   }
 }

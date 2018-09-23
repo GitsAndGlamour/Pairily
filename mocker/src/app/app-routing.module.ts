@@ -3,7 +3,6 @@ import { RouterModule, Routes } from "@angular/router";
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from "./home/home.component";
 import { SetupComponent } from "./setup/setup.component";
-import { LoginComponent } from "./login/login.component";
 import { ProjectsComponent } from "./projects/projects.component";
 import { ProjectDetailComponent } from "./projects/project-detail/project-detail.component";
 import { ScenariosComponent } from "./scenarios/scenarios.component";
@@ -24,7 +23,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent, pathMatch: 'full'},
   { path: 'setup', component: SetupComponent, pathMatch: 'full'},
-  { path: 'login', component: LoginComponent, pathMatch: 'full'},
   { path: 'projects', component: ProjectsComponent, pathMatch: 'full'},
   { path: 'projects/:projectId', component: ProjectDetailComponent},
   { path: 'scenarios', component: ScenariosComponent, pathMatch: 'full'},

@@ -13,20 +13,30 @@
           <mdc-icon mdcListItemGraphic *ngIf="item.icon">{{item.icon}}</mdc-icon>{{showDrawerLabels ? item.label : null}}
         </a>
         <mdc-list-divider></mdc-list-divider>
-        <a mdc-list-item (click)="toggleLogin()" *ngIf="loggedIn || auth == login">
-          <mdc-icon mdcListItemGraphic>{{auth.icon}}</mdc-icon>{{auth.label}}
+        <a mdc-list-item (click)="doLogout()" *ngIf="loggedIn">
+          <mdc-icon mdcListItemGraphic>{{logout.icon}}</mdc-icon>{{logout.label}}
         </a>
-        <form *ngIf="auth == logout && !loggedIn">
-          <mdc-text-field #demousername label="Username" [value]="username" outlined  [dense]="false" [helperText]="userHelperUsername" [required]="true"></mdc-text-field>
-          <p mdcTextFieldHelperText #userHelperUsername="mdcHelperText" validation>
-            <span *ngIf="!demousername?.value">Username is required</span>
+        <a mdc-list-item (click)="toggleAuthType('signup')" *ngIf="!loggedIn">
+          <mdc-icon mdcListItemGraphic>{{signup.icon}}</mdc-icon>{{signup.label}}
+        </a>
+        <a mdc-list-item (click)="toggleAuthType('login')" *ngIf="!loggedIn">
+          <mdc-icon mdcListItemGraphic>{{login.icon}}</mdc-icon>{{login.label}}
+        </a>
+        <form *ngIf="!loggedIn && showAuthForm">
+         <mdc-icon (click)="dismissForm()" id="close">close</mdc-icon>
+          <mdc-text-field #email label="Email" outlined  [dense]="false" [helperText]="userHelperEmail" [required]="true"></mdc-text-field>
+          <p mdcTextFieldHelperText #userHelperEmail="mdcHelperText" validation>
+            <span *ngIf="!email?.value">Email is required</span>
           </p>
           <br>
-        <mdc-text-field #demopassword label="Password" [value]="password" outlined  [dense]="false" [helperText]="userHelperPassword" [required]="true"></mdc-text-field>
+        <mdc-text-field #password type="password" label="Password" outlined  [dense]="false" [helperText]="userHelperPassword" [required]="true"></mdc-text-field>
           <p mdcTextFieldHelperText #userHelperPassword="mdcHelperText" validation>
-            <span *ngIf="!demopassword?.value">Password is required</span>
+            <span *ngIf="!password?.value">Password is required</span>
           </p>
-          <button id="login-submit" [secondary]="true" mdc-button [raised]="true" (click)="submitLogin()">Submit</button>
+          <div id="login-actions">
+            <button mdc-button>Reset</button>
+            <button [secondary]="true" mdc-button [raised]="true" (click)="submit(email.value, password.value)">{{auth.label}}</button>
+          </div>
         </form>
       </mdc-list>
     </mdc-drawer-content>

@@ -1,11 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+
+import { AuthService } from './auth.service';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { SetupComponent } from './setup/setup.component';
-import { LoginComponent } from './login/login.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 import { ScenariosComponent } from './scenarios/scenarios.component';
@@ -29,7 +33,6 @@ import {MaterialModule} from "./themes/material/material.module";
     AppComponent,
     HomeComponent,
     SetupComponent,
-    LoginComponent,
     ProjectsComponent,
     ProjectDetailComponent,
     ScenariosComponent,
@@ -50,9 +53,11 @@ import {MaterialModule} from "./themes/material/material.module";
     BrowserModule,
     AppRoutingModule,
     MdcModule,
-    MaterialModule
+    MaterialModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

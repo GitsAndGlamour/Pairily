@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyBzdgDndzfNwNcfPMRiNiogOAgNOX-9FJ0',
+    authDomain: 'diggly-mock.firebaseapp.com',
+    databaseURL: 'https://diggly-mock.firebaseio.com',
+    projectId: 'diggly-mock',
+    storageBucket: 'diggly-mock.appspot.com',
+    messagingSenderId: '15811257826'
+  }
 };
 
 /*
