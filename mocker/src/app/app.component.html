@@ -12,13 +12,19 @@
         <a mdc-list-item *ngFor="let item of links" routerLink="{{item.href}}">
           <mdc-icon mdcListItemGraphic *ngIf="item.icon">{{item.icon}}</mdc-icon>{{showDrawerLabels ? item.label : null}}
         </a>
+        <mdc-list-divider></mdc-list-divider>
+        <a mdc-list-item routerLink="/login">
+          <mdc-icon mdcListItemGraphic>lock</mdc-icon>Login
+        </a>
       </mdc-list>
     </mdc-drawer-content>
   </mdc-drawer>
   <div mdcDrawerAppContent [ngClass]="{'content-drawer-open': showDrawerLabels, 'content-drawer-close': !showDrawerLabels}" id="router">
     <div id="background">
       <img (click)="cycleHeaderImages()" src="assets/img/wall-{{imageIndex}}.jpg" />
+      <div id="inner-router-container">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-    <router-outlet></router-outlet>
   </div>
 </main>

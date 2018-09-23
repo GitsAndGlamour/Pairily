@@ -25,11 +25,6 @@ export class AppComponent  implements AfterViewInit {
     icon: 'home',
     menu: []
   }, {
-    label: 'Login',
-    href: '/login',
-    icon: 'lock',
-    menu: []
-  }, {
     label: 'Projects',
     href: '/projects',
     icon: 'folder_open',
