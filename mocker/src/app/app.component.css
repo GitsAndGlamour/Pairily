@@ -1,52 +1,54 @@
+img {
+  height: 100vh;
+}
+mdc-drawer {
+  height: 100vh;
+  -webkit-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
+  -moz-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
+  box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
+  background-color: #e5e5e5;
+}
+form {
+  margin: auto;
+  padding: 1rem;
+}
+mdc-text-field {
+  width: 100%;
+}
 .drawer-header-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-
-mdc-drawer {
-  height: 100vh;
-  -webkit-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.43);
-  -moz-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.43);
-  box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.43);
-  background-color: #e5e5e5;
-}
-
 .drawer-header-container a {
   margin: auto;
   padding-top: 1.5rem;
 }
-
 .drawer-open {
   width: 25%;
 }
-
 .drawer-close {
   width: 60px;
 }
-
 .content-drawer-open {
   margin-left: 225px;
 }
-
 .content-drawer-close {
   margin-left: 59px;
 }
-
 #background {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-}
-img {
-  height: 100vh;
 }
 #inner-router-container {
   top: 0;
   position: fixed;
   padding-left: 3rem;
 }
-
+#login-submit {
+  width: 100%;
+}
 
 @media only screen and (max-width: 870px) {
   .drawer-open {

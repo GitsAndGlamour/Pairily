@@ -3,7 +3,7 @@ import {MdcDrawer} from "@angular-mdc/web";
 
 class Link {
   label: string;
-  href: string;
+  href?: string;
   icon: string;
   menu?: Link[];
 }
@@ -14,9 +14,21 @@ class Link {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  implements AfterViewInit {
-  @ViewChild('drawer') drawer:MdcDrawer;
+  @ViewChild('drawer') drawer: MdcDrawer;
+  username;
+  password;
   imageIndex = 1;
   title = 'Diggly';
+  login = {
+    label: 'Login',
+    icon: 'lock_open'
+  };
+  logout = {
+    label: 'logout',
+    icon: 'lock'
+  };
+  loggedIn = false;
+  auth: Link = this.login;
   showDrawerLabels = true;
   drawerToggleIcon: string = 'apps';
   links: Link[] = [{
@@ -117,8 +129,19 @@ export class AppComponent  implements AfterViewInit {
     console.log(this.drawerToggleIcon, this.showDrawerLabels);
   }
 
+  toggleLogin() {
+    this.auth = this.auth == this.login ? this.logout : this.login;
+    if (this.auth == this.logout) {
+      this.loggedIn = false;
+    }
+  }
+
+  submitLogin() {
+    this.loggedIn = true;
+  }
+
   cycleHeaderImages() {
-    if (this.imageIndex == 10) {
+    if (this.imageIndex == 16) {
       this.imageIndex = 0;
     }
     this.imageIndex++;
