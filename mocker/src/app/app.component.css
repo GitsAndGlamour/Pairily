@@ -1,15 +1,14 @@
 mdc-drawer {
   height: 100vh;
-  -webkit-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
-  -moz-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
-  box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
-  background-color: #e5e5e5;
 }
 form {
   margin: auto;
   padding: 1rem;
 }
 mdc-text-field {
+  width: 100%;
+}
+router-outlet {
   width: 100%;
 }
 .drawer-header-container {
@@ -33,9 +32,6 @@ mdc-text-field {
 }
 .content-drawer-close {
   margin-left: 59px;
-}
-#wall {
-  height: 100vh;
 }
 #background {
   height: 100vh;
@@ -69,6 +65,7 @@ mdc-text-field {
   }
   #google-button {
     height: 47px;
+    width: 100%;
   }
 }
 
@@ -87,8 +84,8 @@ mdc-text-field {
     z-index: 2000;
     top: 10%;
     left: 25%;
-    background-color: #e5e5e5;
     border-radius: 5px;
+    background-color: #e5e5e5;
     -webkit-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
     -moz-box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);
     box-shadow: 14px 12px 36px 3px rgba(0,0,0,0.33);

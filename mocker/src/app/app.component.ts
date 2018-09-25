@@ -147,6 +147,7 @@ export class AppComponent  implements AfterViewInit {
       case 'login': this.auth = this.login; break;
       default: this.auth = this.logout;
     }
+  document.getElementById('google-button').scrollIntoView();
   }
 
   submit(emailInput: string, passwordInput: string) {
@@ -183,6 +184,9 @@ export class AppComponent  implements AfterViewInit {
       this.imageIndex = 0;
     }
     this.imageIndex++;
+    let url = "url('assets/img/wall-" + this.imageIndex + ".jpg')";
+    console.log(this.imageIndex, url);
+    document.body.style.backgroundImage = url;
   }
 
   handleAuthSuccess() {

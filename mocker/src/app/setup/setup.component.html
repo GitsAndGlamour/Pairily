@@ -1,3 +1,44 @@
-<p>
-  setup works!
-</p>
+<div class="container shadow-container">
+  <h2>Setup</h2>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let feature"> {{feature.name}} </td>
+    </ng-container>
+
+    <!-- Key Column -->
+    <ng-container matColumnDef="key">
+      <th mat-header-cell *matHeaderCellDef> Key </th>
+      <td mat-cell *matCellDef="let feature"> {{feature.key}} </td>
+    </ng-container>
+
+    <!-- Value Column -->
+    <ng-container matColumnDef="value">
+      <th mat-header-cell *matHeaderCellDef> Value </th>
+      <td mat-cell *matCellDef="let feature">
+        <b *ngIf="!feature.edit">{{feature.value}}</b>
+        <mdc-text-field *ngIf="feature.edit" #value [value]="feature.value" [placeholder]="feature.value"></mdc-text-field>
+      </td>
+    </ng-container>
+
+    <!-- Value Column -->
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> Value </th>
+      <td mat-cell *matCellDef="let feature">
+        <button mat-button (click)="feature.edit = !feature.edit"><mdc-icon [ngClass]="{'edit': !feature.edit, 'close': feature.edit}">{{feature.edit ? 'close' : 'edit'}}</mdc-icon></button>
+        <button mat-button (click)="feature.edit = false"><mdc-icon *ngIf="feature.edit" class="success">done</mdc-icon></button>
+      </td>
+    </ng-container>
+
+    <!-- Fetch Column -->
+    <ng-container matColumnDef="locateKey">
+      <th mat-header-cell *matHeaderCellDef> Locate Key </th>
+      <td mat-cell *matCellDef="let feature"> <a href="{{feature.locateKey}}">{{feature.locateKey}}</a> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

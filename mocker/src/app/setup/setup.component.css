@@ -1,0 +1,35 @@
+.container {
+  padding: 5%;
+  margin: 5%;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+mdc-text-field {
+  height: 35px;
+}
+
+.mdc-text-field {
+  background-color: #e0e0e0 !important;
+}
+
+a {
+  color: #606060;
+}
+button {
+  background-color: #e0e0e0;
+}
+.close {
+  color: firebrick;
+}
+
+.edit {
+  color: #606060;
+}
+
+.success {
+  color: forestgreen;
+}
