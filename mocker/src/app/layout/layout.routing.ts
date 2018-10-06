@@ -1,0 +1,38 @@
+import { Routes } from '@angular/router';
+import { HomeComponent } from "../home/home.component";
+import { SetupComponent } from "../setup/setup.component";
+import { ProjectsComponent } from "../projects/projects.component";
+import { ProjectDetailComponent } from "../projects/project-detail/project-detail.component";
+import { ScenariosComponent } from "../scenarios/scenarios.component";
+import { ScenarioDetailComponent } from "../scenarios/scenario-detail/scenario-detail.component";
+import { SchemasComponent } from "../schemas/schemas.component";
+import { SchemaDetailComponent } from "../schemas/schema-detail/schema-detail.component";
+import { DatasetsComponent } from "../datasets/datasets.component";
+import { DatasetDetailComponent } from "../datasets/dataset-detail/dataset-detail.component";
+import { DatabasesComponent } from "../databases/databases.component";
+import { DatabaseDetailComponent } from "../databases/database-detail/database-detail.component";
+import { GeneratorsComponent } from "../generators/generators.component";
+import { GeneratorDetailComponent } from "../generators/generator-detail/generator-detail.component";
+import { ApisComponent } from "../apis/apis.component";
+import { ApiDetailComponent } from "../apis/api-detail/api-detail.component";
+import { PreferencesComponent } from "../preferences/preferences.component";
+
+export const LayoutRoutes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'setup', component: SetupComponent },
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'projects/:projectId', component: ProjectDetailComponent },
+  { path: 'scenarios', component: ScenariosComponent },
+  { path: 'scenarios/:scenarioId', component: ScenarioDetailComponent },
+  { path: 'schemas', component: SchemasComponent },
+  { path: 'schemas/:schemaId', component: SchemaDetailComponent },
+  { path: 'datasets', component: DatasetsComponent },
+  { path: 'datasets/:datasetId', component: DatasetDetailComponent },
+  { path: 'databases', component: DatabasesComponent },
+  { path: 'databases/:databaseId', component: DatabaseDetailComponent },
+  { path: 'generators', component: GeneratorsComponent },
+  { path: 'generators/:generatorId', component: GeneratorDetailComponent },
+  { path: 'apis', component: ApisComponent },
+  { path: 'apis/:apiId', component: ApiDetailComponent },
+  { path: 'preferences', component: PreferencesComponent }
+];

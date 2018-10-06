@@ -23,9 +23,19 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/scss/material-dashboard.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+                "../mocker/node_modules/jquery/dist/jquery.js",
+                "../mocker/node_modules/popper.js/dist/umd/popper.js",
+                "../mocker/node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
+                "../mocker/node_modules/arrive/src/arrive.js",
+                "../mocker/node_modules/moment/moment.js",
+                "../mocker/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
+                "../mocker/node_modules/bootstrap-notify/bootstrap-notify.js",
+                "../mocker/node_modules/chartist/dist/chartist.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -72,6 +82,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "src/assets/scss/material-dashboard.scss",
               "src/styles.scss"
             ],
             "scripts": [],

@@ -9,14 +9,7 @@ export interface SetupFeature {
   locateKey: string;
 }
 
-const SETUPS_FEATURED: SetupFeature[] = [
-  {name: 'Mockaroo', key: 'API Key', value: '30923sd382f', edit: false, locateKey: 'https://www.mockaroo.com/profile'},
-  {name: 'Mockaroo', key: 'API Key', value: '30923sd382f', edit: true,  locateKey: 'https://www.mockaroo.com/profile'},
-  {name: 'Mockaroo', key: 'API Key', value: '30923sd382f', edit: false, locateKey: 'https://www.mockaroo.com/profile'},
-  {name: 'Mockaroo', key: 'API Key', value: '30923sd382f', edit: false, locateKey: 'https://www.mockaroo.com/profile'},
-  {name: 'Mockaroo', key: 'API Key', value: '30923sd382f', edit: false, locateKey: 'https://www.mockaroo.com/profile'},
-  {name: 'Mockaroo', key: 'API Key', value: '30923sd382f', edit: false, locateKey: 'https://www.mockaroo.com/profile'},
-];
+let SETUPS_FEATURED: SetupFeature[] = [];
 
 @Component({
   selector: 'app-setup',
@@ -25,16 +18,27 @@ const SETUPS_FEATURED: SetupFeature[] = [
 })
 export class SetupComponent implements OnInit {
   displayedColumns: string[] = ['name', 'key', 'value', 'edit', 'locateKey'];
-  dataSource = [];
+  dataSource;
   constructor(private firebaseFirestore: AngularFirestore) { }
 
   ngOnInit() {
     this.firebaseFirestore.firestore
       .collection('setups')
       .get()
-      .then(value => {
-        console.log(value);
-
+      .then(querySnapshot => {
+        let results = [];
+        querySnapshot.forEach(function(doc) {
+          let data = doc.data();
+          let row = {
+            name: data['name'],
+            key: data['key'],
+            value: data['value'],
+            edit: data['edit'],
+            locateKey: data['locateKey']
+          };
+          results.push(row);
+        });
+        this.dataSource = results;
       });
   }
 
