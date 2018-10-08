@@ -20,23 +20,16 @@ import { GeneratorDetailComponent } from "../generators/generator-detail/generat
 import { ApisComponent } from "../apis/apis.component";
 import { ApiDetailComponent } from "../apis/api-detail/api-detail.component";
 import { PreferencesComponent } from "../preferences/preferences.component";
-
-import {
-  MatButtonModule,
-  MatInputModule,
-  MatRippleModule,
-  MatTooltipModule,
-} from '@angular/material';
+import { MaterialModule } from "../themes/material/material.module";
+import { MdcModule } from "../themes/mdc/mdc.module";
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(LayoutRoutes),
     FormsModule,
-    MatButtonModule,
-    MatRippleModule,
-    MatInputModule,
-    MatTooltipModule,
+    MaterialModule,
+    MdcModule
   ],
   declarations: [
     HomeComponent,

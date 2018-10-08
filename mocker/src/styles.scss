@@ -7,9 +7,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
-mdc-snackbar {
-  width: 100vw;
-  z-index: 1000;
-  bottom: 0;
-  position: fixed;
+.flex-space-sm {
+  width: 20px;
 }
