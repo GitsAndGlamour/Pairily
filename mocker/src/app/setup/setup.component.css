@@ -17,3 +17,7 @@ mat-card {
 .padding-top-20 {
   padding-top: 20px;
 }
+
+.container {
+  margin-top: 60px;
+}

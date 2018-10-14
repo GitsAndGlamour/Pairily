@@ -3,7 +3,7 @@ import { LayoutRoutes } from './layout.routing';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HomeComponent } from '../home/home.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 import { SetupComponent } from "../setup/setup.component";
 import { ProjectsComponent } from "../projects/projects.component";
 import { ProjectDetailComponent } from "../projects/project-detail/project-detail.component";
@@ -32,8 +32,8 @@ import { MdcModule } from "../themes/mdc/mdc.module";
     MdcModule
   ],
   declarations: [
-    HomeComponent,
-    HomeComponent,
+    DashboardComponent,
+    DashboardComponent,
     SetupComponent,
     ProjectsComponent,
     ProjectDetailComponent,

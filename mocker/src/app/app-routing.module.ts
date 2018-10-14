@@ -7,7 +7,7 @@ import { BrowserModule } from "@angular/platform-browser";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'dashboard',
     pathMatch: 'full',
   }, {
     path: '',

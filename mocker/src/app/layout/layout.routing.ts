@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from "../home/home.component";
+import { DashboardComponent } from "../dashboard/dashboard.component";
 import { SetupComponent } from "../setup/setup.component";
 import { ProjectsComponent } from "../projects/projects.component";
 import { ProjectDetailComponent } from "../projects/project-detail/project-detail.component";
@@ -18,7 +18,7 @@ import { ApiDetailComponent } from "../apis/api-detail/api-detail.component";
 import { PreferencesComponent } from "../preferences/preferences.component";
 
 export const LayoutRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'setup', component: SetupComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'projects/:projectId', component: ProjectDetailComponent },

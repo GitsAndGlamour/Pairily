@@ -1,44 +1,44 @@
-<br><br>
-<div class="row">
-  <div class="col-lg-10 col-md-12">
-    <div class="card">
-      <div class="card-header card-header-tabs card-header-primary">
-        <div class="nav-tabs-navigation">
-          <div class="nav-tabs-wrapper">
-            <span class="nav-tabs-title">Secrets:</span>
-            <ul class="nav nav-tabs" data-tabs="tabs">
-              <li class="nav-item" *ngFor="let setup of setupList">
-                <a mat-button class="nav-link" href="#{{setup.title}}" data-toggle="tab">
-                  <i class="material-icons">{{setup.icon}}</i> {{setup.title}}
-                  <div class="ripple-container"></div>
-                </a>
-              </li>
-            </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="card">
+        <div class="card-header card-header-tabs card-header-primary">
+          <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+              <span class="nav-tabs-title">Secrets:</span>
+              <ul class="nav nav-tabs" data-tabs="tabs">
+                <li class="nav-item" *ngFor="let setup of setupList">
+                  <a mat-button class="nav-link" href="#{{setup.title}}" data-toggle="tab" (click)="selectSetup(setup.title)">
+                    <i class="material-icons">{{setup.icon}}</i> {{setup.title}}
+                    <div class="ripple-container"></div>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card-body">
-        <div class="tab-content">
-          <div class="tab-pane active" *ngFor="let setup of setupList" [attr.id]="setup.title">
-            <table class="table">
-              <tbody *ngFor="let item of secretList">
-                  <tr *ngIf="item.name.toLowerCase() == setup.title.toLowerCase()">
+        <div class="card-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="{{setup.title}}">
+              <table class="table">
+                <tbody *ngFor="let item of setup.list">
+                  <tr>
                     <td>
                       <div class="form-check">
                         <label class="form-check-label">
                           <input class="form-check-input" type="checkbox" value="">
                           <span class="form-check-sign">
-                                <span class="check"></span>
-                            </span>
+                            <span class="check"></span>
+                          </span>
                         </label>
                       </div>
                     </td>
                     <td>
                       <div  class="d-inline-flex">
-                        <div [ngClass]="{'padding-top-20': item.edit}"><b>{{item.name}} {{item.key}}</b></div>
+                        <div [ngClass]="{'padding-top-20': item.edit}"><b>{{item.key}}</b></div>
                         <span class="flex-space-sm"></span>
                         <mat-form-field *ngIf="item.edit">
-                          <input matInput placeholder="Value" [attr.value]="item.value">
+                          <input matInput placeholder="Value" value="{{item.value}}">
                         </mat-form-field>
                         <span *ngIf="!item.edit">{{item.value}}</span>
                       </div>
@@ -48,13 +48,14 @@
                         <i class="material-icons" (click)="item.edit = !item.edit">{{item.edit? 'check' : 'edit'}}</i>
                       </button>
                       <button mat-raised-button type="button" matTooltip="Remove" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                        <i class="material-icons"(click)="item.edit = false">close</i>
+                        <i class="material-icons" (click)="item.edit = false">close</i>
                       </button>
                     </td>
                   </tr>
-              <tr></tr>
-              </tbody>
-            </table>
+                  <tr></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
